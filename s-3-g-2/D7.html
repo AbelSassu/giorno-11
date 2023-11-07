@@ -93,11 +93,9 @@
     */
 
       const addClassToTitle = function (nomeClasse) {
-        const h1Element = document.querySelector("h1");
-        if (h1Element) {
-        h1Element.classList.add("myHeading");
+        const title = document.querySelector("h1");
+        title.classList.add(nomeClasse)
      }
-      }
       addClassToTitle("myHeading")
       /* ESERCIZIO 3
        Scrivi una funzione che cambi il testo dei p figli di un div
@@ -112,15 +110,15 @@
       /* ESERCIZIO 4
        Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
       */
-      const changeUrls = function() {
-  const links = document.querySelectorAll('a');
-  links.forEach((link) => {
-    if (!link.closest('footer')) {
-      link.href = 'https://www.google.com';
+      const changeUrls = function(nuovoUrl) {
+      const links = document.querySelectorAll('a');
+      links.forEach((link) => {
+      if (!link.closest('footer')) {
+      link.href = nuovoUrl ;
     }
   });
 }
-changeUrls()
+changeUrls('https://www.google.com')
 
       /* ESERCIZIO 5
        Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
@@ -128,17 +126,15 @@ changeUrls()
 
   const addToTheSecond = function (testoImmesso) {
   const secondList = document.getElementById('secondList');
-  if (secondList) {
-    const nuovoElementoLista = document.createElement('li');
-    nuovoElementoLista.textContent = testoImmesso;
-    secondList.appendChild(nuovoElementoLista);
-  }
+    const nuovaLi = document.createElement('li');
+    nuovaLi.textContent = testoImmesso;
+    secondList.appendChild(nuovaLi);
 }
 addToTheSecond("prova e riprova")
       /* ESERCIZIO 6
        Scrivi una funzione che aggiunga un paragrafo al primo div
     */
-    const addParagraph = function (testoQua) {
+  const addParagraph = function (testoQua) {
   const primoDiv = document.querySelector("div")
   const nuovoParagrafo = document.createElement("p")
   nuovoParagrafo.textContent = testoQua;
@@ -153,7 +149,7 @@ addParagraph("Popolo di Striscia");
     const hideFirstUl = function(){
   const primaLista = document.getElementById("firstList")
   if (primaLista) {
-    primaLista.style.display = "none"; // Imposta lo stile per nascondere la lista
+    primaLista.style.display = "none";
   }
 }
 hideFirstUl();
